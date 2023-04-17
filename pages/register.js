@@ -7,7 +7,9 @@ emailField: {xpath: '//*[@id="input-email"]'},
 phoneNumberField: {xpath: '//*[@id="input-telephone"]'},
 passwordField: {xpath: '//*[@id="input-password"]'},
 passwordRepeatField: {xpath: '//*[@id="input-confirm"]'},
+subscribeRatioButton: {xpath: '//*[@id="content"]/form/fieldset[3]/div/div/label[2]'},
 iHaveReadRatioButton: {xpath: '//*[@id="content"]/form/div/div/input[1]'},
+continueButton: {xpath: '//*[@id="content"]/form/div/div/input[2]'},
 
     verifyRegisterPage() {
       I.see('Регистрация');
@@ -20,5 +22,12 @@ iHaveReadRatioButton: {xpath: '//*[@id="content"]/form/div/div/input[1]'},
     I.fillField(this.phoneNumberField, user.phone);
     I.fillField(this.passwordField, user.password);
     I.fillField(this.passwordRepeatField, user.passwordRepeat);
+    I.click(this.subscribeRatioButton);
+    I.click(this.iHaveReadRatioButton);
+    I.click(this.continueButton);  
+    },
+
+    verifySuccessfullRegistration() {
+      I.see('Ваша учетная запись создана!');
     }
 }
