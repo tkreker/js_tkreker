@@ -7,16 +7,16 @@ emailField: {xpath: '//*[@id="input-email"]'},
 phoneNumberField: {xpath: '//*[@id="input-telephone"]'},
 passwordField: {xpath: '//*[@id="input-password"]'},
 passwordRepeatField: {xpath: '//*[@id="input-confirm"]'},
-subscribeRadioButton: {xpath: '//*[@id="content"]/form/fieldset[3]/div/div/label[2]'},
-iHaveReadRadioButton: {xpath: '//*[@id="content"]/form/div/div/input[1]'},
-continueButton: {xpath: '//*[@id="content"]/form/div/div/input[2]'},
+subscribeRadioButton: {xpath: '//label[@class="radio-inline"][2]'},
+iHaveReadRadioButton: {xpath: '//input[@name="agree"]'},
+continueButton: {xpath: '//input[@name="agree"]'},
 
     verifyRegisterPage() {
       I.see('Регистрация');
     },
 
     submitNewUserForm(user) {
-      I.fillField(this.firstNameField, user.firstName);
+    I.fillField(this.firstNameField, user.firstName);
     I.fillField(this.lastNameField, user.lastName);
     I.fillField(this.emailField, user.email);
     I.fillField(this.phoneNumberField, user.phone);
