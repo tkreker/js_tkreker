@@ -34,7 +34,8 @@ exports.config = {
     I: './steps_file.js',
     basePage: "./pages/base.js",
     registerPage: "./pages/register.js",
-    checkoutPage: "./pages/checkout.js"
+    checkoutPage: "./pages/checkout.js",
+    productPage: "./pages/product.js",
   },
   name: 'js_tkreker'
 }
