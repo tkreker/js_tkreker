@@ -20,14 +20,14 @@ Scenario.only('buy product', async ({ I, basePage, checkoutPage, productPage }) 
     //add method to clean the cart - grabNumberOfVisibleElements() 
     // I.selectOption("//div[@id='product']//a[contains(text(),'Выберите') and contains(@id, 'sbSelector')]", 'Gray'); //select size, color. try to select with .selectOption()
     productPage.chooseColor();
-    productPage.getProductPrice();
+    await productPage.getProductPrice();
     productPage.addToCart();
     basePage.openCart();
     productPage.proceedToCheckout();
     checkoutPage.verifyCheckoutPage();
     checkoutPage.submitCheckoutForm(USER);
-    productPage.getShippingPrice();
-    productPage.getCheckoutPrice();
+    await productPage.getShippingPrice();
+    await productPage.getCheckoutPrice();
     I.assertEqual(productPage.getProductPrice() + productPage.getShippingPrice(), productPage.getCheckoutPrice(), "Prices are not in match");
     checkoutPage.confirmOrder();
     checkoutPage.verifySuccessfullOrder();
