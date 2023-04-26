@@ -36,6 +36,7 @@ exports.config = {
     registerPage: "./pages/register.js",
     checkoutPage: "./pages/checkout.js",
     productPage: "./pages/product.js",
+    cartPage: "./pages/cart.js"
   },
   name: 'js_tkreker'
 }
