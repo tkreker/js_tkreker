@@ -20,14 +20,23 @@ exports.config = {
       waitForTimeout: 5000,
       show: true,
       browser: 'chromium'
-    }
+    },
+
+    "ChaiWrapper": {
+      "require": "codeceptjs-chai"
+    },
+
+    PageHelper: {
+      require: './helpers/pageHelper_helper.js',
+    },
   },
   include: {
     I: './steps_file.js',
-
     basePage: "./pages/base.js",
-
-    registerPage: "./pages/register.js"
+    registerPage: "./pages/register.js",
+    checkoutPage: "./pages/checkout.js",
+    productPage: "./pages/product.js",
+    cartPage: "./pages/cart.js"
   },
   name: 'js_tkreker'
 }
